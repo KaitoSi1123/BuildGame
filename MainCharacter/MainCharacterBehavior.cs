@@ -7,9 +7,13 @@ using ThirdPersonCameraController = EasyCharacterMovement.ThirdPersonCameraContr
 public class Player : ThirdPersonCharacter
 {
 
-    private float _playerHP = 20f;
-    private float _playerSatiety = 20f;
-    private float _playerThirst = 20f;
+    private float _playerHP = 100f;
+    private float _playerSatiety = 40f;
+    private float _playerThirst = 70f;
+    private float _playerHPMax = 100;
+    private float _playerSatietyMax = 100;
+    private float _playerThirstMax = 100;
+
 
 
     [HideInInspector] public List<Items> itemsInInventoryPlayer = new List<Items>();
@@ -18,6 +22,9 @@ public class Player : ThirdPersonCharacter
     [HideInInspector] public float playerHP { get {return _playerHP;} protected set {_playerHP = value;} }
     [HideInInspector] public float playerSatiety { get {return _playerSatiety;} protected set {_playerSatiety = value;} }
     [HideInInspector] public float playerThirst { get {return _playerThirst;} protected set {_playerThirst = value;} }
+    [HideInInspector] public float playerHPMax { get {return _playerHPMax;} protected set {_playerHPMax = value;} }
+    [HideInInspector] public float playerSatietyMax { get {return _playerSatietyMax;} protected set {_playerSatietyMax = value;} }
+    [HideInInspector] public float playerThirstMax { get {return _playerThirstMax;} protected set {_playerThirstMax = value;} }
     [HideInInspector] public float playerSpeedCollectionResourses = 10f;
 
     [HideInInspector] public GameObject whatIsItemForPickUp { get; private set; }
@@ -29,8 +36,6 @@ public class Player : ThirdPersonCharacter
     [SerializeField] private SkinnedMeshRenderer _skinnedMesh;
     [SerializeField] private IndicatorsOfPlayer _indicatorsOfPlayer;
     //[SerializeField] private GameObject _gameObjectForAnim;
-
-
 
     private ResourseBehavior _resourseBehavior;
     private InitializeItems _initializeItems;
@@ -146,6 +151,7 @@ public class Player : ThirdPersonCharacter
         {
             StopMovement();
         }
+        CursorLocked(_toggleController);
     }
 
     public void MovementController()

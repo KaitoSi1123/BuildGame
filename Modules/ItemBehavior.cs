@@ -21,8 +21,8 @@ public struct Items
     public float thirstItem { get; private set; }
     public bool isObjectWithoutWait { get; private set; }
     public GameObject typeOfItem { get; private set; }
-    public bool isResourse { get; private set; }
     public string descrionItem { get; private set; }
+    public bool isResourse;
 
     public Items(float _weightOfItem, string _name, GameObject _typeOfItem, float _heathItem, float _satietyItem, float _thirstItem, bool _isObjectWithoutWait, bool _isResourse, string _descrionItem)
     {

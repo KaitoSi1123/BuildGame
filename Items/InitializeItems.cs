@@ -5,8 +5,8 @@ using UnityEngine;
 public class InitializeItems : MonoBehaviour
 {
 
-    public string NameItem;
-    public ItemBehavior itemBehavior;
+    [SerializeField] public string NameItem;
+    [SerializeField] public ItemBehavior itemBehavior;
     [SerializeField] private float _weightOfItem;
     [SerializeField] private float _heathItem;
     [SerializeField] private float _satietyItem;
